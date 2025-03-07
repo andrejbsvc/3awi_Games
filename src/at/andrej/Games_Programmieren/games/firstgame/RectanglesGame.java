@@ -5,8 +5,9 @@ import org.newdawn.slick.tests.DeferredLoadingTest;
 
 public class RectanglesGame extends BasicGame {
 
-    private int x;
-    private int y;
+    private float x;
+    private float y;
+    private float speed;
 
     public RectanglesGame(){
         super("Rectangles");
@@ -15,18 +16,22 @@ public class RectanglesGame extends BasicGame {
     public void init(GameContainer gameContainer) throws SlickException {
 
         this.x = 100;
+        this.speed = 5f;
 
     }
 
-    @Override
-    public void update(GameContainer gameContainer, int i) throws SlickException {
-        this.x++;
-        this.y++;
 
-        if (this.x > 800) {
+    @Override
+    public void update(GameContainer gameContainer, int delta) throws SlickException {
+
+        this.x += (float)delta/this.speed;
+
+        if(this.x > 800) {
             this.x = 0;
-            this.y = 0;
+
         }
+
+
     }
 
     @Override
