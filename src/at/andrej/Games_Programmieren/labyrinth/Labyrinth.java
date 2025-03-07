@@ -1,11 +1,11 @@
-package Games_Programmieren;
+package at.andrej.Games_Programmieren.labyrinth;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Rectangle extends JPanel implements KeyListener {
+public class Labyrinth extends JPanel implements KeyListener {
     private final int TILE_SIZE = 40;
     private final int ROWS = 10, COLS = 10;
     private int playerX = 1, playerY = 1;
@@ -23,7 +23,7 @@ public class Rectangle extends JPanel implements KeyListener {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
     };
 
-    public Rectangle() {
+    public Labyrinth() {
         JFrame frame = new JFrame("Labyrinth Game");
         frame.setSize(COLS * TILE_SIZE, ROWS * TILE_SIZE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,9 +38,9 @@ public class Rectangle extends JPanel implements KeyListener {
         for (int y = 0; y < ROWS; y++) {
             for (int x = 0; x < COLS; x++) {
                 if (maze[y][x] == 1) {
-                    g.setColor(Color.RED);
+                    g.setColor(Color.BLUE);
                 } else {
-                    g.setColor(Color.GREEN);
+                    g.setColor(Color.BLACK);
                 }
                 g.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
                 g.setColor(Color.GRAY);
